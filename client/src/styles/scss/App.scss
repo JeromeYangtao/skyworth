@@ -7,18 +7,21 @@ body {
 }
 
 .App {
-  text-align: center;
-  > ul {
+  .nav {
     display: flex;
     justify-content: space-around;
-    margin: 16px;
+    margin: 0;
     > li {
-      border: 1px solid black;
+      flex-grow: 1;
+      text-align: center;
       > a {
         display: inline-block;
-        padding: 8px;
-        height: 100%;
         width: 100%;
+        height: 100%;
+        padding: 1rem;
+      }
+      &:hover {
+        background: #ddd;
       }
     }
   }
