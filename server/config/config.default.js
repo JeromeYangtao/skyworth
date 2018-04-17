@@ -17,7 +17,16 @@ module.exports = appInfo => {
       },
     }
   }
+  config.sequelize = {
+    dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
+    database: 'skyworth',
+    host: '127.0.0.1',
+    port: '3306',
+    username: 'root',
+    password: 'skyworth147',
+  }
   return config
 }
+
 
 

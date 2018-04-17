@@ -13,3 +13,8 @@ exports.static = {
   enable: true,
   package: 'egg-static',
 }
+// 连接mysql
+exports.sequelize = {
+  enable: true,
+  package: 'egg-sequelize',
+}
