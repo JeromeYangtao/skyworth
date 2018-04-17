@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import Home from './components/home'
-import Join from './components/join'
-import Management from './components/management'
-import Login from './components/login'
+import Home from './components/Home'
+import Join from './components/Join'
+import Management from './components/Management'
+import Login from './components/Login'
+import FooterBar from './components/FooterBar'
+
 class App extends Component {
   render () {
     return (
@@ -23,7 +25,7 @@ class App extends Component {
               <Route path="/management" component={Management}/>
               <Route path="/login" component={Login}/>
             </Switch>
-            <footer>footer</footer>
+            <FooterBar/>
           </div>
         </Router>
       </div>
