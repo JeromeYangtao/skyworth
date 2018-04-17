@@ -4,8 +4,8 @@ import { Upload, Button, Icon } from 'antd'
 class Join extends Component {
   render () {
     return (
-      <div className="Join">
-        Join
+      <div className="join">
+        加入我们
         <MyUpload/>
       </div>
     )
