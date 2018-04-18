@@ -11,11 +11,9 @@ module.exports = appInfo => {
     dir: path.join(process.cwd(), 'app/public/static')
   }
   config.security = {
-    security: {
-      csrf: {
-        // enable: false,
-      },
-    }
+    csrf: {
+      enable: false,
+    },
   }
   config.sequelize = {
     dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
@@ -25,6 +23,13 @@ module.exports = appInfo => {
     username: 'root',
     password: 'skyworth147',
   }
+  config.session = {
+    key: 'EGG_SESSION',
+    maxAge: 24 * 3600 * 1000, // 1 天
+    httpOnly: false,
+    encrypt: false,
+  }
+
   return config
 }
 

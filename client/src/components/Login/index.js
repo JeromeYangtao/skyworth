@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 class Login extends Component {
   state = {
@@ -12,11 +13,12 @@ class Login extends Component {
     this.setState(newState)
   }
 
-  handleSubmit () {
+  async handleSubmit () {
     let data = {
       username: this.state.username,
       password: this.state.password,
     }
+    await axios.post('http://localhost:7002/login', data)
     console.log('登录')
   }
 
