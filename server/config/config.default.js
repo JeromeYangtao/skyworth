@@ -29,7 +29,15 @@ module.exports = appInfo => {
     httpOnly: false,
     encrypt: false,
   }
-
+  config.redis = {
+    client: {
+      port: 6379, // Redis port
+      host: '127.0.0.1', // Redis host
+      password: 'skyworth147',
+      db: 0,
+    },
+    agent: true,
+  }
   return config
 }
 

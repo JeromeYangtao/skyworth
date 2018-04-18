@@ -5,9 +5,16 @@ const Controller = require('egg').Controller
 const awaitWriteStream = require('await-stream-ready').write
 const sendToWormhole = require('stream-wormhole')
 
-let users = []
-
 class UserController extends Controller {
+  constructor (ctx) {
+    super(ctx)
+    this.session = ctx.session
+    this.UserModel = ctx.model.UserModel
+    this.UserService = ctx.service.userService
+    this.ResponseCode = ctx.response.ResponseCode
+    this.ServerResponse = ctx.response.ServerResponse
+  }
+
   async info () {
     const {ctx} = this
     ctx.body = {
@@ -15,21 +22,20 @@ class UserController extends Controller {
     }
   }
 
+  async register () {
+    const user = this.ctx.request.body
+    const respponse = await this.UserService.register(user)
+    this.ctx.body = respponse
+  }
+
   async login () {
     const {ctx} = this
     const {username, password} = ctx.request.body
-    ctx.session.user = {username,password}
-    // users.forEach((user) => {
-    //   if (user.username === username && user.password === password) {
-    //     ctx.session.user = user
-    //   }
-    // })
-    // 设置 Session
-    ctx.body =  ctx.session.user
+    ctx.session.user = {username, password}
+    ctx.body = ctx.session.user
   }
 
   async upload () {
-    console.log(this.ctx.session)
     const parts = this.ctx.multipart({autoFields: true})
     const files = []
 

@@ -8,5 +8,6 @@ module.exports = app => {
   router.get('/', controller.home.index)
   router.get('/user/:id', controller.user.info)
   router.post('/upload', controller.user.upload)
+  router.post('/register', controller.user.register)
   router.post('/login', controller.user.login)
 }

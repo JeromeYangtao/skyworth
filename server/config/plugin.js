@@ -9,12 +9,20 @@ exports.validate = {
   package: 'egg-validate',
 }
 // 静态资源处理
-exports.static = {
-  enable: true,
-  package: 'egg-static',
-}
+// exports.static = {
+//   enable: true,
+//   package: 'egg-static',
+// }
 // 连接mysql
 exports.sequelize = {
   enable: true,
   package: 'egg-sequelize',
+}
+exports.redis = {
+  enable: true,
+  package: 'egg-redis',
+}
+exports.sessionRedis = {
+  enable: true,
+  package: 'egg-session-redis',
 }
