@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Join from './components/Join'
 import Management from './components/Management'
 import Login from './components/Login'
+import Register from './components/Register'
 import FooterBar from './components/FooterBar'
 
 class App extends Component {
@@ -18,12 +19,15 @@ class App extends Component {
               <li><Link to="/join">加入我们</Link></li>
               <li><Link to="/management">后台管理</Link></li>
               <li><Link to="/login">登录</Link></li>
+              <li><Link to="/register">注册</Link></li>
             </ul>
+
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route path="/join" component={Join}/>
               <Route path="/management" component={Management}/>
               <Route path="/login" component={Login}/>
+              <Route path="/register" component={Register}/>
             </Switch>
             <FooterBar/>
           </div>
